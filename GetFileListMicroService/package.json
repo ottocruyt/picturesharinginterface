@@ -1,0 +1,28 @@
+{
+  "name": "getfilesmicroservice",
+  "version": "1.0.0",
+  "description": "get files from rack pc on vehicle",
+  "main": "server.js",
+  "scripts": {
+    "test": "nyc --all mocha --recursive",
+    "coverage": "nyc --reporter=html --reporter=text --all mocha --recursive && start ./coverage/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "mock-req-res": "^1.2.0",
+    "node-mocks-http": "^1.8.1",
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "rewire": "^5.0.0"
+  }
+}

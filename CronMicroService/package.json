@@ -1,0 +1,25 @@
+{
+  "name": "cronmicroservice",
+  "version": "1.0.0",
+  "description": "cronjobs for picture sharing interface",
+  "main": "server.js",
+  "scripts": {
+    "test": "nyc --all mocha --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mocha": "^8.1.1",
+    "nconf": "^0.10.0",
+    "node-cron": "^2.0.3",
+    "node-tar.gz": "^1.0.0",
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2",
+    "util": "^0.12.3"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  }
+}
