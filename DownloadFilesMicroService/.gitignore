@@ -1,7 +1,0 @@
-node_modules
-download.log
-download-err.log
-dowload-err.log
-.nyc_output
-coverage
-test/testdata
