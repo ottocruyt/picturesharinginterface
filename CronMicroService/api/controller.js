@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var properties = require('../package.json');
-//var settings = require('../service/settings.js');
+var properties = require("../package.json");
+const settings = require("../service/settings.js");
 
 var controllers = {
   about: function (req, res) {
@@ -10,6 +10,14 @@ var controllers = {
       version: properties.version,
     };
     res.json(aboutInfo);
+  },
+  getSettings: function (req, res) {
+    const currentSettings = settings.getAllSettings();
+    res.json(currentSettings);
+  },
+  setSettings: function (req, res) {
+    const newSettings = settings.setAllSettings(req.body);
+    res.json(newSettings);
   },
 
   // todo

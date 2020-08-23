@@ -1,7 +1,7 @@
-const cron = require('node-cron');
-const files = require('./files.js');
-const fileLists = require('./filelists.js');
-const settings = require('./settings.js');
+const cron = require("node-cron");
+const files = require("./files.js");
+const fileLists = require("./filelists.js");
+const settings = require("./settings.js");
 let currentlyScheduledCronJob;
 let everyXminutes = 1;
 
@@ -16,8 +16,8 @@ let everyXminutes = 1;
 //(*)  * * * * *
 
 const startup = () => {
-  console.log('Starting up crons');
-  console.log('Running cron job once on startup');
+  console.log("Starting up crons");
+  console.log("Running cron job once on startup");
   cronJob();
   scheduleCrons();
 };
@@ -27,7 +27,7 @@ const cronJob = async () => {
 };
 
 const scheduleCrons = () => {
-  everyXminutes = settings.get('frequency');
+  everyXminutes = settings.get("frequency");
   const scheduleFrequency = `*/${everyXminutes} * * * *`;
   currentlyScheduledCronJob = cron.schedule(
     scheduleFrequency,
@@ -52,21 +52,20 @@ const downloadAllFilesFromAllVehicles = async () => {
 };
 
 const rescheduleCrons = () => {
-  console.log('Rescheduling Cron Job');
+  console.log("Rescheduling Cron Job");
   currentlyScheduledCronJob.stop();
-  console.log('Stopped Cron Job');
+  console.log("Stopped Cron Job");
   startup();
 };
 
 const checkConfigChange = () => {
-  console.log('checking config');
-  console.log('everyXminutes: ', everyXminutes);
-  const configMinutes = settings.get('frequency');
-  console.log('config: ', configMinutes);
-
-  if (everyXminutes != configMinutes) {
-    console.log('Detected frequency change.');
+  console.log("Checking configuration.");
+  configurationIsTheSame = settings.check("frequency", everyXminutes);
+  if (!configurationIsTheSame) {
+    console.log("Detected configuration change.");
     rescheduleCrons();
+  } else {
+    console.log("No configuration change detected.");
   }
 };
 

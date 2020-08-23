@@ -1,9 +1,8 @@
-const axios = require('axios');
-const HOST = 'localhost';
+const axios = require("axios");
+const HOST = "localhost";
 const PORT = 3001; //TODO: setting
-const API_ENDPOINT = 'filelist';
-const IPS = ['10.203.215.176']; //TODO: setting
-
+const API_ENDPOINT = "filelist";
+const IPS = ["10.203.215.176"]; //TODO: setting
 const get = async () => {
   //console.log(`filelists.get -- ${new Date()}`);
   let allIpFileLists = [];
