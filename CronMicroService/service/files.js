@@ -27,7 +27,6 @@ const downloadAndUntar = async (filelist) => {
 };
 
 const downloadAndUntarFile = async (file) => {
-  // console.log(`filelists.downloadAndUntarFile(${file}) -- ${new Date()}`);
   const url = `http://${HOST}:${PORT}/${API_ENDPOINT}/${file}`;
   return await axios.get(url);
 };
